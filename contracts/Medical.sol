@@ -130,10 +130,10 @@ contract Patient{
 
     uint public numberOfMedicalProviders;
 
-    modifier ownerOnly(){
-        require(msg.sender == owner,'Access Denied');
-        _;
-    }
+    // modifier ownerOnly(){
+    //     require(msg.sender == owner,'Access Denied');
+    //     _;
+    // }
 
     modifier restricted(){
         require(msg.sender == owner || addedProvidersAccess[msg.sender],'Not enough Persmission');
@@ -160,11 +160,11 @@ contract Patient{
       requests.push(_providerAddress);
     }
 
-    function getRequests() public ownerOnly view returns(address[] memory){
+    function getRequests() public view returns(address[] memory){
       return requests;
     }
 
-    function addProvider(address _providerAddress)  public ownerOnly {
+    function addProvider(address _providerAddress)  public {
       require(!addedProvidersAccess[_providerAddress],'Permission Denied');
       Provider provider = Provider(_providerAddress);
       provider._patientRequest(address(this));
@@ -173,7 +173,7 @@ contract Patient{
       addedProvidersAccess[_providerAddress] = true;
     }
 
-    function acceptProvider(uint _index) public ownerOnly {
+    function acceptProvider(uint _index) public {
       Provider provider = Provider(requests[_index]);
       addedProviders.push(requests[_index]);
       numberOfMedicalProviders++;
@@ -182,7 +182,7 @@ contract Patient{
       delete requests[_index];
     }
 
-    function deleteRequest(uint _index) public ownerOnly {
+    function deleteRequest(uint _index) public {
         if (_index > requests.length) return;
         for(uint i = _index ; i < requests.length; i++){
             requests[i] = requests[i+1];
@@ -198,7 +198,7 @@ contract Patient{
         return files[_index];
     }
 
-    function returnIdentity() public ownerOnly view returns (string memory, string memory, string memory, string memory) {
-        return (identity.firstName, identity.lastName, identity.dateOfBirth, identity.addressResidence);
+    function returnIdentity() public view returns (string memory) {
+        return identity.firstName;
     }
 }
