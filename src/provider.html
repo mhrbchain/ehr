@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Form</title>
+        <title>Provider</title>
         <meta charset="utf-8">
     </head>
     <body>
 
-        <div id="form-register">
-            <form onSubmit="App.registerPatient(); return false;">
-                    <input id="fName" type="text" placeholder="First Name" required>
-                    <input id="lName" type="text" placeholder="Last Name" required>
-                    <input id="dob" type="text" placeholder="DOB" required>
-                    <input id="address" type="text" placeholder="Address" required>
-                    <input type="submit" >
-            </form>
-        </div>
-
-        <div id="form-register-provider">
-            <form onSubmit="App.registerProvider(); return false;">
+        <div id="form-add-patient">
+            <form onSubmit="App.addPatientByProvider(); return false;">
+                <input type="text" placeholder="address" id="pat-address">Patient Address of blochchain
                     <input type="submit" >
             </form>
         </div>

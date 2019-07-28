@@ -16780,12 +16780,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x04E80Ae02FFDa9bd1cF43B5eF69D32b64950eDD7",
-      "transactionHash": "0x5b13dffa54ea886bbd04de48060fd720d2c1299d33947c43767571ea9db578ef"
+      "address": "0xD19Cd4309cd8229d104c9F12373D177db92DcF2f",
+      "transactionHash": "0xaefe623237932a5ca507184ace5c1f4059464409a294d76e70738958a56bace5"
     }
   },
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-07-23T14:00:35.768Z",
+  "updatedAt": "2019-07-24T09:41:06.118Z",
   "devdoc": {
     "methods": {}
   },

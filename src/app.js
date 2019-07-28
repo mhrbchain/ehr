@@ -52,6 +52,10 @@ App = {
         App.contracts.ElectronicHealthSystem = TruffleContract(EHS);
         App.contracts.ElectronicHealthSystem.setProvider(App.web3Provider);
 
+        const Prv = await $.getJSON('Provider.json');
+        App.contracts.Provider = TruffleContract(Prv);
+        App.contracts.Provider.setProvider(App.web3Provider);
+
         // const patientC = await $.getJSON('Patient.json');
         // App.contracts.Patient = TruffleContract(patientC);
         // App.contracts.Patient.setProvider(App.web3Provider);
@@ -62,6 +66,7 @@ App = {
 
         // Hydrate the smart contract with values from the blockchain
         App.EHS = await App.contracts.ElectronicHealthSystem.deployed();
+        App.Prv = await App.contracts.Provider.deployed();
         // App.patientC = await App.contracts.Patient.deployed();
         // App.providerC = await App.contracts.Provider.deployed();
     },
@@ -92,6 +97,15 @@ App = {
         const dob = $('#dob').val();
         const address = $('#address').val();
         await App.EHS.registerAsPatient(fname, lname, dob, address);
+    },
+
+    registerProvider: async () => {
+        await App.EHS.registerAsProvider();
+    },
+
+    addPatientByProvider: async() => {
+        const patientAddress = $('#pat-address').val();
+        await App.Prv.addPatient(patientAddress);
     }
 
     // renderTasks: async () => {
