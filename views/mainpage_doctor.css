@@ -1,0 +1,63 @@
+#mainpage{
+	width:100%;
+	height:730px;
+	margin:0;
+	background-image: linear-gradient(to bottom right,white,#3498db,blue);
+
+	border-color:black;
+
+	
+	}
+#upperhead
+{
+	width:99%;
+	height:200px;
+		margin-right:0.5%;
+		margin-left:0.5%;
+		margin-top:15px;
+	background-color: #96C0CE;	
+	background-image: linear-gradient(to bottom left,blue ,#3498db,white);
+	border-color: white;
+	border-width:3px;
+		border-radius:20px;
+
+}
+
+#image_portion{
+
+height:70%;
+width:20%;
+margin-left: 20px;
+margin-top: 25px;
+background-color:white;
+border-radius:90px;
+background-image: url("doctor_image.jpg");
+background-position:center;
+float:left;
+
+}
+#name_portion{
+	margin-top:15px;
+	margin-left:40px;
+
+	height:100%;
+	width:80%;
+
+}
+#option_list{
+	height:525px;
+	
+	border-color: blue;
+	border-right-width: 5px;
+	width: 40%;
+	border:solid;
+
+}
+#transaction_box
+{
+	width:60%;
+	height: 530px;
+	float:right;
+	background-color:white;
+}
+	
